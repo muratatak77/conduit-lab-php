@@ -13,7 +13,7 @@ class ArticleResource extends JsonResource
         return [
             'slug' => $this->slug,
             'title' => $this->title,
-            'description' => \Illuminate\Support\Str::limit($this->body, 80),
+            'description' => $this->description,
             'body' => $this->body,
             'tagList' => $this->tags->pluck('name'),
             'createdAt' => $this->created_at,
